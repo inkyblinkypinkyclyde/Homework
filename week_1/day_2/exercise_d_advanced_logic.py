@@ -37,6 +37,9 @@ for num in numbers:
 #    
 #    So [11, 6, 4, 99, 7, 11] would have sum of 22
 
+# count until it gets to a six and stop THEN count until it starts at a 7 and start
+
+
 
 # 5. HARD! Print the sum of the numbers. 
 #    Except the number 13 is very unlucky, so it does not count.

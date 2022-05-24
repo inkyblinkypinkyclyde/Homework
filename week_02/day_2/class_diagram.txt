@@ -1,0 +1,18 @@
+I have submitted a class diagram.
+
+This shows the gardner-plant-bed relationship.
+
+As demonstrated in my diagram, The gardener has a series of attributes:
+Name, which is a sting
+height, which is an integer
+number_of_trowels, which is an integer
+plants which is an empty list
+
+the methods which can becalled on the gardner are:
+plant_plant which has the parameters plant and bed
+total_plants has no additional parameters because it is called on the object itself but it does return an integer
+dig_over_bed which resets the number of plants in a bed to 0. This returns nothing but does take the parameter bed.
+
+Bed has no methods but does have the attributes Location, area and plants (which is a list).
+
+Plant has the attributes family, species and age. It has one method which will increment the age attribute by one day (when it is written)  

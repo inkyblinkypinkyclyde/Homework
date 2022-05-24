@@ -1,0 +1,9 @@
+I have submitted an object diagram of gardner-plant-bed program.
+
+This includes the Gardener object who's name is Otto. He is 200cm tall and has many(500) trowels. He can have plants but at the moment it's an empty list.
+
+The bed object is showing the Under Tree Bed which has location, area and plants as properties.
+
+The Plant shows the Broccoli object which has a family, species and age property.
+
+I am not a gardener.

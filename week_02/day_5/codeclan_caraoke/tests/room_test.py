@@ -3,6 +3,7 @@ import unittest
 from classes.room import Room
 from classes.guest import Guest
 from classes.song import Song
+from classes.bar import Bar
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
@@ -16,6 +17,9 @@ class TestRoom(unittest.TestCase):
         self.song1 = Song("Dancing Queen")
         self.song2 = Song("Flamenco Sketches")
         self.song3 = Song("Just The Two of Us")
+        self.bar1 = Bar("Disco bar", 100)
+        self.bar2 = Bar("Jazz Bar", 100)
+
     
     def test_room_has_name(self):
         self.assertEqual("Disco Room", self.room1.name)
@@ -36,7 +40,7 @@ class TestRoom(unittest.TestCase):
 
     def test_music_off(self):
         self.room1.play_song(self.song1)
-        self.room1.stop_music()
+        self.room1.stop_song()
         self.assertEqual([], self.room1.now_playing)
 
     def test_check_room_for_guest_not_found(self):
@@ -101,6 +105,26 @@ class TestRoom(unittest.TestCase):
         self.room1.admit_to_room(self.guest2)
         self.assertEqual(None, self.room1.is_rowdy(self.guest2))
 
-    
+    def test_can_remove_from_room_guest_in_room(self):
+        self.room1.admit_to_room(self.guest1)
+        self.room1.remove_occupant(self.guest1)
+        self.assertEqual([], self.room1.occupants)
+
+    def test_can_remove_from_room_guest_not_in_room(self):
+        self.room1.admit_to_room(self.guest2)
+        self.room1.remove_occupant(self.guest1)
+        self.assertEqual([self.guest2], self.room1.occupants)
+
+    def test_room_has_bar_no_bar(self):
+        self.assertEqual([], self.room1.bar)
+        self.assertEqual([], self.room2.bar)
+
+    def test_room_has_bar(self):
+        self.room1.open_bar(self.bar1)
+        self.room2.open_bar(self.bar2)
+        self.assertEqual([self.bar1], self.room1.bar)
+        self.assertEqual([self.bar2], self.room2.bar)
+
+
 
 

@@ -7,7 +7,6 @@ class Guest:
     
     def remove_cash(self, amount):
         self.wallet -= amount
-    
-    # def what_music(self, room):
-    #     if room.now_playing() == self.favourite_song:
-    #         return "What a banger!"
+
+    def add_cash(self, amount):
+        self.wallet += amount

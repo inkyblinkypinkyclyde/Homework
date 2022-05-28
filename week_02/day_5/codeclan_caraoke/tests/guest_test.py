@@ -11,5 +11,7 @@ class TestGuest(unittest.TestCase):
     
     def test_remove_cash(self):
         self.guest1.remove_cash(10)
-
         self.assertEqual(10, self.guest1.wallet)
+    
+    def test_has_favourite_song(self):
+        self.assertEqual("Dancing Queen", self.guest1.favourite_song)

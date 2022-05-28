@@ -1,8 +1,6 @@
 import unittest
 
 from classes.song import Song
-# from classes.guest im`port Guest
-# from classes.room import room`
 
 class TestSong(unittest.TestCase):
     def setUp(self):
